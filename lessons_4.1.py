@@ -5,16 +5,16 @@ nums = [
     [9, 0, 7, 31, 0, 45, 0, 45, 0, 45, 0, 0, 96, 0]
 ]
 
-for toolist in nums:
-    list = toolist[:]
+for alsoalist in nums:
+    list = alsoalist[:]
     non_zero_index = 0
 
-    for i in range(len(toolist)):
-        if toolist[i] != 0:
-            toolist[non_zero_index] = toolist[i]
+    for i in range(len(alsoalist)):
+        if alsoalist[i] != 0:
+            alsoalist[non_zero_index] = alsoalist[i]
             non_zero_index += 1
 
-    for i in range(non_zero_index, len(toolist)):
-        toolist[i] = 0
+    for i in range(non_zero_index, len(alsoalist)):
+        alsoalist[i] = 0
         
-    print(f"{list} -> {toolist}")
+    print(f"{list} -> {alsoalist}")
