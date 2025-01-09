@@ -9,7 +9,7 @@ if variable_name[0].isdigit() or any(ch in string.punctuation.replace('_', '') o
 elif any(ch.isupper() for ch in variable_name):
     print(False)
 
-elif variable_name.count('_') > 1:
+elif variable_name.count('__') > 1: 
     print(False)
 
 elif variable_name in keyword.kwlist:
