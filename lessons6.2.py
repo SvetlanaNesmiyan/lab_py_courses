@@ -12,7 +12,16 @@ def format_time(seconds):
     hours, remaining_seconds = divmod(remaining_seconds, time_units["hour"])
     minutes, remaining_seconds = divmod(remaining_seconds, time_units["minute"])
 
-    day_word = "день" if days == 1 else ("дні" if 2 <= days <= 4 else "днів")
+    def get_day_word(value):
+        if value % 10 == 1 and value % 100 != 11:
+            return "день"
+        elif 2 <= value % 10 <= 4 and not (12 <= value % 100 <= 14):
+            return "дні"
+        else:
+            return "днів"
+
+    day_word = get_day_word(days)
+
     formatted_time = (
         f"{days} {day_word}, "
         f"{str(hours).zfill(2)}:{str(minutes).zfill(2)}:{str(remaining_seconds).zfill(2)}"
