@@ -1,9 +1,12 @@
 import string
 import keyword
 
-variable_name = input("Введіть рядок: ")
+variable_name = input("Введіть рядок:")
 
-if variable_name[0].isdigit() or any(ch in string.punctuation.replace('_', '') or ch.isspace() for ch in variable_name):
+if not variable_name:
+    print(True)
+
+elif variable_name[0].isdigit() or any(ch in string.punctuation.replace('_', '') or ch.isspace() for ch in variable_name):
     print(False)
 
 elif any(ch.isupper() for ch in variable_name):
